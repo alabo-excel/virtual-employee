@@ -92,6 +92,15 @@ input:focus {
         width: 100% !important;
     }
 }
-.nav{
+
+.nav {
     transition: all .5s ease-in-out;
+}
+
+.overflow {
+    overflow-x: auto;
+}
+
+.overflow button {
+    white-space: nowrap
 }
