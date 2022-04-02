@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import {LogoWhite, LogoDark} from "./images"
 
 const Navbar = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -24,7 +25,7 @@ const Navbar = () => {
             {isVisible ?
                 <div className="flex nav justify-between">
                     <div className="lg:w-1/2 bg-dark-blue py-4 pl-28 sm:p-4">
-                        <img src="/images/b-s-logo-white.png" alt="" />
+                        <img src={LogoWhite} alt="" />
                     </div>
                     <div className="lg:w-1/2 sm:p-3 pr-28 py-4 flex justify-end" >
                         <div className="w-12 h-12 px-4 py-2 text-lg sm:text-xs sm:py-2 sm:px-3 sm:h-8 sm:w-8 rounded-full bg-light hover:bg-blue text-blue hover:text-white mx-2">
@@ -41,7 +42,7 @@ const Navbar = () => {
                 :
                 <div className="flex bg-white nav justify-between fixed w-screen z-30">
                     <div className="w-1/2 pl-28 py-4 pl-28 sm:p-4">
-                        <img src="/images/b-s-logo.png" alt="" />
+                        <img src={LogoDark} alt="" />
                     </div>
                     <div className="lg:w-1/2 sm:p-3 pr-28 py-4 flex justify-end" >
                         <div className="w-12 h-12 px-4 py-2 text-lg sm:text-xs sm:py-2 sm:px-3 sm:h-8 sm:w-8 rounded-full bg-light hover:bg-blue text-blue hover:text-white mx-2">

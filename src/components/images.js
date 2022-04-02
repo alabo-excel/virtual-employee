@@ -38,3 +38,6 @@ export { default as Java } from "/images/java.svg"
 export { default as Angular } from "/images/angular.svg"
 export { default as NodeJs } from "/images/nodejs.svg"
 export { default as Vue } from "/images/vuejs.svg"
+export { default as LogoWhite } from "/images/b-s-logo-white.png"
+export { default as LogoDark } from "/images/b-s-logo.png"
+
