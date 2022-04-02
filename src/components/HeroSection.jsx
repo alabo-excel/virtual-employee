@@ -4,14 +4,14 @@ const HeroSection = () => {
     return (
         <div>
             <div>
-                <div className="flex mmr-2">
+                <div className="flex">
                     <div className="bg-dark-blue z-10 w-1/2 h-screen rounded-br-large">
                         <img src="/images/dots-dark.svg" className="absolute bottom-12 left-20" alt="" />
                     </div>
                     <div>
                         <img src="/images/dots-light.svg" className="absolute right-20 top-24" alt="" />
                     </div>
-                    <div className="bg-light rounded-tr-large h-96 w-full absolute bottom-0 right-4"></div>
+                    <div className="bg-light rounded-tr-large h-96 w-full absolute bottom-0"></div>
                 </div>
                 <div className="flex justify-center">
                     <div className="absolute z-20 hero h-100 flex rounded-br-large top-32 w-10/12 52 mx-auto rounded-3xl">
@@ -20,7 +20,7 @@ const HeroSection = () => {
                                 <br />
                                 <span className="line">software developers</span>
                             </div>
-                            <div className="text-2xl my-8 text-gray-500">
+                            <div className="text-2xl my-8 text-gray">
                                 minus the investment of a swanky new office
                             </div>
                             <div>

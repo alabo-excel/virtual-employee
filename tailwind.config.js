@@ -4,11 +4,13 @@ module.exports = {
     './src/**/*.{vue,jsx,ts,js}',
   ],
   theme: {
-    extend:{
-      colors:{
+    extend: {
+      colors: {
         'dark-blue': '#1B1C4A',
         'blue': '#010AE8',
-        "light": "#F1F9FB"
+        "light": "#F1F9FB",
+        "gray": "#769196",
+        "light-blue": "#E3E9FF"
       },
       spacing: {
         '100': '25rem;',
