@@ -10,12 +10,16 @@ module.exports = {
         'blue': '#010AE8',
         "light": "#F1F9FB",
         "gray": "#769196",
-        "light-blue": "#E3E9FF"
+        "light-blue": "#E3E9FF",
+        "yellow": "#FFEA7E",
+        "border": "#B4CDD2",
+        "text": "#5E7478"
       },
       spacing: {
         '100': '25rem;',
         '120': '29rem;',
         '150': '42rem;',
+        
       }
     },
     borderRadius: {
@@ -29,7 +33,7 @@ module.exports = {
     },
     screens: {
       'sm': { 'max': '700px' },
-      'md': '700px',
+      'md': '800px',
       'lg': '1024px',
       'xl': '1280px',
     }
