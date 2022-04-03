@@ -8,7 +8,7 @@ const Register = () => {
     const [Desc, setDesc] = useState("")
     const [Duration, setDuration] = useState("")
     const submit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         let data = {
             "name": UserName,
             "email": Email,
@@ -27,10 +27,19 @@ const Register = () => {
             body: JSON.stringify(data)
         })
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => {
+                console.log(data);
+                // setUserName("")
+                // setEmail("")
+                // setDuration("")
+                // setContact("")
+                // setDesc("")
+                // setWebsite("")
+
+            });
     }
     return (
-        <div className="register bg-dark-blue">
+        <div className="register bg-dark-blue" id="register">
             <div className="lg:flex px-28 sm:p-0 py-20">
                 <div className="lg:w-1/2 sm:p-4">
                     <div className="text leading-tight mb-16 font-bold text-white">
@@ -72,10 +81,10 @@ const Register = () => {
                                     <label className="font-bold">Contact Number *</label>
                                 </div>
                                 <div className="flex">
-                                    {/* <select className="p-4 rounded-md bg-transparent border border- border-border -mr-1">
+                                    <select className="p-4 w-20 rounded-md bg-transparent border border- border-border -mr-1">
                                         <option value="+234">+234</option>
-                                    </select> */}
-                                    <input type="number" onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md" />
+                                    </select>
+                                    <input type="number" onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md rounded-l-none" />
                                 </div>
                             </div>
                             <div className="w-input my-2 sm:my-4">
@@ -106,7 +115,7 @@ const Register = () => {
                             <textarea onChange={e => setDesc(e.target.value)} name="" placeholder="Type your answer here" className="p-3 border border-border w-full rounded-md"></textarea>
                         </div>
                         <div className="mt-8">
-                            <input type="button" onClick={submit} value="start 1-week free trial" className="p-4 font-bold capitalize bg-blue text-white w-full rounded-md" />
+                            <input type="button" onClick={submit} value="start 1-week free trial" className="p-4 font-bold capitalize btn bg-blue text-white w-full rounded-md" />
                         </div>
                     </div>
                 </form>

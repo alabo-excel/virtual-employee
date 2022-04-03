@@ -24,7 +24,9 @@ const HeroSection = () => {
                                 minus the investment of a swanky new office
                             </div>
                             <div>
-                                <input type="button" value="start 1-week free trial" className="capitalize text-white bg-blue p-5 px-12 sm:px-8 font-semibold text-lg rounded-md" />
+                                <a href="#register">
+                                    <input type="button" value="start 1-week free trial" className="capitalize text-white btn bg-blue p-5 px-12 sm:px-8 font-semibold text-lg rounded-md" />
+                                </a>
                             </div>
                         </div>
                         <img className="ml-auto h-120 lg:block hidden absolute right-0 -top-16  rounded-br-large" src={Hero} alt="" />
