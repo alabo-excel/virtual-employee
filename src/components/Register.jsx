@@ -1,4 +1,6 @@
 import { React, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const [UserName, setUserName] = useState("")
@@ -7,7 +9,7 @@ const Register = () => {
     const [Website, setWebsite] = useState("")
     const [Desc, setDesc] = useState("")
     const [Duration, setDuration] = useState("")
-    const submit = (e) => {
+    const submit = () => {
         // e.preventDefault()
         let data = {
             "name": UserName,
@@ -17,7 +19,7 @@ const Register = () => {
             "website_name": Website,
             "work_requirements": Desc
         }
-        fetch('https://ipserversite.herokuapp.com/quotes/inquiry-form',{
+        fetch('https://ipserversite.herokuapp.com/quotes/inquiry-form', {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -28,18 +30,19 @@ const Register = () => {
         })
             .then(response => response.json())
             .then(data => {
+                toast("Submitted!")
                 console.log(data);
-                // setUserName("")
-                // setEmail("")
-                // setDuration("")
-                // setContact("")
-                // setDesc("")
-                // setWebsite("")
-
+                setUserName("")
+                setEmail("")
+                setDuration("")
+                setContact("")
+                setDesc("")
+                setWebsite("")
             });
     }
     return (
         <div className="register bg-dark-blue" id="register">
+            <ToastContainer />
             <div className="lg:flex px-28 sm:p-0 py-20">
                 <div className="lg:w-1/2 sm:p-4">
                     <div className="text leading-tight mb-16 font-bold text-white">
@@ -81,10 +84,10 @@ const Register = () => {
                                     <label className="font-bold">Contact Number *</label>
                                 </div>
                                 <div className="flex">
-                                    <select className="p-4 w-20 rounded-md bg-transparent border border- border-border -mr-1">
+                                    {/* <select className="p-4 px-2 lg:w-20 w-40 rounded-md bg-transparent border border- border-border -mr-1">
                                         <option value="+234">+234</option>
-                                    </select>
-                                    <input type="number" onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md rounded-l-none" />
+                                    </select> */}
+                                    <input type="number" onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md" />
                                 </div>
                             </div>
                             <div className="w-input my-2 sm:my-4">

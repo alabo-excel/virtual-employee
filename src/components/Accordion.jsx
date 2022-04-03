@@ -4,7 +4,7 @@ const Accordion = ({ title, content, changeImage, index }) => {
     const [isActive, setIsActive] = useState(false);
     return (
         <div className="accordion mr-10">
-            <div onMouseLeave={() => setIsActive(false)}
+            <div
                 className={isActive ? "bg-light p-6 rounded-lg border border-border" : `accordion-item nav py-6 border-b border-border px-6 p-2`}
                 onClick={() => changeImage(index)}
             >

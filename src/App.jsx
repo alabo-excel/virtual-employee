@@ -16,17 +16,17 @@ function App() {
 
   return (
     <div className="App">
-     <div>
-       <Navbar />
-       <HeroSection />
-       <SectionOne />
-       <SectionTwo />
-       <Services />
-       <SectionThree />
+      <div>
+        <Navbar />
+        <HeroSection />
+        <SectionOne />
         <Stacks />
-       <Register />
-       <Footer />
-     </div>
+        <SectionTwo />
+        <Services />
+        <SectionThree />
+        <Register />
+        <Footer />
+      </div>
     </div>
   )
 }
