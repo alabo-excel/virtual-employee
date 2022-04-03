@@ -9,7 +9,11 @@ export { default as Larry } from "/images/larry.jpg"
 export { default as Travis } from "/images/travis.jpg"
 export { default as Jarret } from "/images/jarret.jpg"
 
-export { default as Software } from "/images/enterprise-software-mobile.png"
+export { default as Software1 } from "/images/enterprise-software-mobile.png"
+export { default as Software2 } from "/images/custom-software-mobile.png"
+export { default as Software3 } from "/images/mobile-web-mobile.png"
+export { default as Software4 } from "/images/desktop-app-mobile.png"
+export { default as Software5 } from "/images/re-engineering-mobile.png"
 
 
 export { default as Andorid } from "/images/android.svg"

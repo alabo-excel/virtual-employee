@@ -4,7 +4,7 @@ import { Office3, Quote, Jarret } from '../images'
 
 const DevelopersSection = () => {
     return (
-        <div className="bg-light lg:p-28 p-20 sm:p-4 sm:mt-0 -mt-14">
+        <div className="bg-light lg:p-28 p-20 sm:p-4 sm:mt-0 mt-16">
             <div className="lg:relative flex justify-center">
                 <div className="lg:w-1/2 text bg-light mx-auto text-center z-20 lg:absolute -top-12 mx-auto text-dark-blue font-bold lg:p-6 mb-8 lg:mb-0">
                     Developers who've<br />

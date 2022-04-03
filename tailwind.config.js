@@ -19,7 +19,7 @@ module.exports = {
         '100': '25rem;',
         '120': '29rem;',
         '150': '42rem;',
-        
+        '200': '50rem;',
       }
     },
     borderRadius: {

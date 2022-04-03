@@ -1,6 +1,34 @@
-import React from 'react';
+import { React, useState } from 'react';
 
 const Register = () => {
+    const [UserName, setUserName] = useState("")
+    const [Email, setEmail] = useState("")
+    const [Contact, setContact] = useState("")
+    const [Website, setWebsite] = useState("")
+    const [Desc, setDesc] = useState("")
+    const [Duration, setDuration] = useState("")
+    const submit = (e) => {
+        e.preventDefault()
+        let data = {
+            "name": UserName,
+            "email": Email,
+            "phone": Contact,
+            "duration": Duration,
+            "website_name": Website,
+            "work_requirements": Desc
+        }
+        fetch('https://ipserversite.herokuapp.com/quotes/inquiry-form',{
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json; charset=utf-8'
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
     return (
         <div className="register bg-dark-blue">
             <div className="lg:flex px-28 sm:p-0 py-20">
@@ -22,58 +50,66 @@ const Register = () => {
                         <div className='text-xl py-2 text-white'>testimonials on record</div>
                     </div>
                 </div>
-                <div className="lg:w-1/2 bg-white rounded-3xl py-20 sm:px-6 sm:py-8 p-10">
-                    <div className="flex sm:block justify-between">
-                        <div className="w-input sm:my-4">
-                            <div className="my-2">
-                                <label className="font-bold">Name*</label>
+                <form onSubmit={submit} className="lg:w-1/2 bg-white rounded-3xl py-20 sm:px-6 sm:py-8 p-10">
+                    <div >
+                        <div className="flex sm:block justify-between">
+                            <div className="w-input sm:my-4">
+                                <div className="my-2">
+                                    <label className="font-bold">Name*</label>
+                                </div>
+                                <input type="text" onChange={e => setUserName(e.target.value)} placeholder="e.g. James Smith" className="p-3 border border-border w-full rounded-md" />
                             </div>
-                            <input type="text" placeholder="e.g. James Smith" className="p-3 border border-border w-full rounded-md" />
+                            <div className="w-input sm:my-4">
+                                <div className="my-2">
+                                    <label className="font-bold">Email Address*</label>
+                                </div>
+                                <input onChange={e => setEmail(e.target.value)} type="text" placeholder="name@example.com" className="p-3 border border-border w-full rounded-md" />
+                            </div>
                         </div>
-                        <div className="w-input sm:my-4">
-                            <div className="my-2">
-                                <label className="font-bold">Email Address*</label>
+                        <div className="flex sm:block justify-between">
+                            <div className="my-2 w-input sm:my-4">
+                                <div className="my-2">
+                                    <label className="font-bold">Contact Number *</label>
+                                </div>
+                                <div className="flex">
+                                    {/* <select className="p-4 rounded-md bg-transparent border border- border-border -mr-1">
+                                        <option value="+234">+234</option>
+                                    </select> */}
+                                    <input type="number" onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md" />
+                                </div>
                             </div>
-                            <input type="text" placeholder="name@example.com" className="p-3 border border-border w-full rounded-md" />
-                        </div>
-                    </div>
-                    <div className="flex sm:block justify-between">
-                        <div className="my-2 w-input sm:my-4">
-                            <div className="my-2">
-                                <label className="font-bold">Contact Number *</label>
-                            </div>
-                            <div className="flex">
-                                <select className="p-4 rounded-md bg-transparent border border- border-border -mr-1">
-                                    <option value="+234">+234</option>
+                            <div className="w-input my-2 sm:my-4">
+                                <div className="my-2">
+                                    <label className="font-bold">Project Duration *</label>
+                                </div>
+                                <select onChange={e => setDuration(e.target.value)} className="p-4 rounded-md bg-transparent border border-border w-full">
+                                    <option value="More than 1 Year">More than 1 Year</option>
+                                    <option value="6 Months to 1 Year">6 Months to 1 Year</option>
+                                    <option value="3 to 6 Months"> 3 to 6 Months</option>
+                                    <option value="1 to 3 Months"> 1 to 3 Months</option>
+                                    <option value="Less than a Month">Less than a Month</option>
+                                    <option value="Not Sure"> Not Sure</option>
+                                    <option value="Apply for a Job">Apply for a Job</option>
                                 </select>
-                                <input type="number" className="p-3 border border-border w-full rounded-r-md" />
                             </div>
                         </div>
-                        <div className="w-input my-2 sm:my-4">
+                        <div className="my-4">
                             <div className="my-2">
-                                <label className="font-bold">Project Duration *</label>
+                                <label className="font-bold">Website / Company</label>
                             </div>
-                            <select className="p-4 rounded-md bg-transparent border border-border w-full">
-                                <option value="+234">Select One</option>
-                            </select>
+                            <input onChange={e => setWebsite(e.target.value)} type="text" placeholder="www.yourwebsite.com" className="p-3 border border-border w-full rounded-md" />
+                        </div>
+                        <div className="my-4">
+                            <div className="my-2">
+                                <label className="font-bold">Work Requirement *</label>
+                            </div>
+                            <textarea onChange={e => setDesc(e.target.value)} name="" placeholder="Type your answer here" className="p-3 border border-border w-full rounded-md"></textarea>
+                        </div>
+                        <div className="mt-8">
+                            <input type="button" onClick={submit} value="start 1-week free trial" className="p-4 font-bold capitalize bg-blue text-white w-full rounded-md" />
                         </div>
                     </div>
-                    <div className="my-4">
-                        <div className="my-2">
-                            <label className="font-bold">Website / Company</label>
-                        </div>
-                        <input type="text" placeholder="www.yourwebsite.com" className="p-3 border border-border w-full rounded-md" />
-                    </div>
-                    <div className="my-4">
-                        <div className="my-2">
-                            <label className="font-bold">Work Requirement *</label>
-                        </div>
-                        <textarea name="" placeholder="Type your answer here" className="p-3 border border-border w-full rounded-md"></textarea>
-                    </div>
-                    <div className="mt-8">
-                        <input type="button" value="start 1-week free trial" className="p-4 font-bold capitalize bg-blue text-white w-full rounded-md" />
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     );

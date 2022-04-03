@@ -57,6 +57,10 @@ const stacks = [
             name: "DevOps",
         },
         {
+            img: Java,
+            name: "Java",
+        },
+        {
             img: Mern,
             name: "MERN stack",
         },
@@ -85,8 +89,8 @@ const stacks = [
     ],
     [
         {
-            img: Java,
-            name: "Java",
+            img: ReactNative,
+            name: "React",
         },
         {
             img: Angular,
