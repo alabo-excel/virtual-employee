@@ -102,7 +102,7 @@ const Register = () => {
                                     <label className="font-bold">Contact Number *</label>
                                 </div>
                                 <div className="flex">
-                                    <input type="number" value={Contact} onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md" />
+                                    <input type="text" value={Contact} onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md" />
                                 </div>
                             </div>
                             <div className="w-input my-2 sm:my-4">
