@@ -5,10 +5,20 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const [UserName, setUserName] = useState("")
     const [Email, setEmail] = useState("")
-    const [Contact, setContact] = useState("")
+    const [Contact, setContact] = useState("+49")
     const [Website, setWebsite] = useState("")
     const [Desc, setDesc] = useState("")
     const [Duration, setDuration] = useState("")
+
+    const reset = () => {
+        setUserName("")
+        setEmail("")
+        setDuration("")
+        setContact("")
+        setDesc("")
+        setWebsite("")
+    }
+    let status;
     const submit = () => {
         // e.preventDefault()
         let data = {
@@ -19,26 +29,34 @@ const Register = () => {
             "website_name": Website,
             "work_requirements": Desc
         }
-        fetch('https://ipserversite.herokuapp.com/quotes/inquiry-form', {
-            method: "POST",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json; charset=utf-8'
-            },
-            mode: 'cors',
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(data => {
-                toast("Submitted!")
-                console.log(data);
-                setUserName("")
-                setEmail("")
-                setDuration("")
-                setContact("")
-                setDesc("")
-                setWebsite("")
-            });
+        if (UserName.length === 0, Email.length === 0, Contact.length === 0, Duration.length === 0, Website.length === 0, Desc.length === 0) {
+            toast.error("Please fill all the input field!")
+            // console.log(Desc.length)
+        } else {
+            fetch('https://ipserversite.herokuapp.com/quotes/inquiry-form', {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json; charset=utf-8'
+                },
+                mode: 'cors',
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    status = response.status
+
+                    response.json()
+                })
+                .then(data => {
+                    if (status === 400) {
+                        toast.error("Please fill all the input field!")
+                    } else {
+                        toast("Submitted!")
+                        reset()
+                    }
+                    // console.log(data);
+                });
+        }
     }
     return (
         <div className="register bg-dark-blue" id="register">
@@ -84,7 +102,7 @@ const Register = () => {
                                     <label className="font-bold">Contact Number *</label>
                                 </div>
                                 <div className="flex">
-                                    <input type="number" onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md" />
+                                    <input type="number" value={Contact} onChange={e => setContact(e.target.value)} className="p-3 border border-border w-full rounded-md" />
                                 </div>
                             </div>
                             <div className="w-input my-2 sm:my-4">

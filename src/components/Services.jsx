@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-import Accordion from './Accordion';
 import { Software1, Software2, Software3, Software4, Software5 } from "./images"
 
 const Services = () => {
