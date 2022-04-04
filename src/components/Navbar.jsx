@@ -33,9 +33,9 @@ const Navbar = () => {
                                 <i className="bi bi-telephone-fill"></i>
                             </div>
                         </a>
-                        <div className="w-12 h-12 px-4 py-2 text-lg sm:text-xs sm:py-2 sm:px-3 sm:h-8 sm:w-8 rounded-full bg-light hover:bg-blue text-blue hover:text-white mx-2">
+                        {/* <div className="w-12 h-12 px-4 py-2 text-lg sm:text-xs sm:py-2 sm:px-3 sm:h-8 sm:w-8 rounded-full bg-light hover:bg-blue text-blue hover:text-white mx-2">
                             <i className="bi bi-skype"></i>
-                        </div>
+                        </div> */}
                         <a href="mailto:kontakt.concly@gmail.com">
                             <div className="w-12 h-12 px-4 py-2 text-lg sm:text-xs sm:py-2 sm:px-3 sm:h-8 sm:w-8 rounded-full bg-light hover:bg-blue text-blue hover:text-white mx-2">
                                 <i className="bi bi-envelope-open-fill"></i>
