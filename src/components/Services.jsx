@@ -4,7 +4,13 @@ import { Software1, Software2, Software3, Software4, Software5 } from "./images"
 
 const Services = () => {
     const [image, setImage] = useState(Software1)
-
+    const [isActive, setIsActive] = useState(null);
+    const toggle = (index) => {
+        if (isActive === index) {
+            return setIsActive(null)
+        }
+        setIsActive(index)
+    }
     useEffect(() => {
         setImage(Software1)
     }, [])
@@ -58,9 +64,26 @@ const Services = () => {
                         you'd <span className="line">ever need</span>
                     </div>
                     <div className="lg:block hidden">
-                        {accordionData.map(({ title, content, img }, index) => (
-                            <Accordion changeImage={changeImage} img={img} key={index} index={index} title={title} content={content} />
-                        ))}
+                        {accordionData.map(({ title, content, img }, index) =>
+                        (
+                            <div
+                                className={isActive === index ? "bg-light p-6 rounded-lg border border-border" : `accordion-item py-6 border-b border-border px-6 p-2`}
+                                key={index}
+                                onClick={() => changeImage(index)}
+                            >
+                                <div
+                                    className="accordion-title flex justify-between"
+                                    onClick={() => toggle(index)}
+                                >
+                                    <div className="font-bold text-dark-blue text-xl">{title}</div>
+                                    <div className="cursor-pointer text-2xl">{isActive === index ? '-' : '+'}</div>
+                                </div>
+                                <div className={isActive === index ? 'content show' : 'content'}>
+                                    {content}
+                                </div>
+                            </div>
+                        )
+                        )}
                     </div>
                 </div>
                 <div className="lg:block hidden bg-light-blue lg:absolute right-0 -top-12 bottom-0 rounded-3xl lg:rounded-tl-3xl sm:rounded-3xl rounded-bl-large lg:h-200 lg:w-1/2 sm:py-6">
