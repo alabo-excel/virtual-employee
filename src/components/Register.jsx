@@ -14,7 +14,7 @@ const Register = () => {
         setUserName("")
         setEmail("")
         setDuration("")
-        setContact("")
+        setContact("+49")
         setDesc("")
         setWebsite("")
     }
@@ -87,13 +87,13 @@ const Register = () => {
                                 <div className="my-2">
                                     <label className="font-bold">Name*</label>
                                 </div>
-                                <input type="text" onChange={e => setUserName(e.target.value)} placeholder="e.g. James Smith" className="p-3 border border-border w-full rounded-md" />
+                                <input value={UserName}  type="text" onChange={e => setUserName(e.target.value)} placeholder="e.g. James Smith" className="p-3 border border-border w-full rounded-md" />
                             </div>
                             <div className="w-input sm:my-4">
                                 <div className="my-2">
                                     <label className="font-bold">Email Address*</label>
                                 </div>
-                                <input onChange={e => setEmail(e.target.value)} type="text" placeholder="name@example.com" className="p-3 border border-border w-full rounded-md" />
+                                <input value={Email}  onChange={e => setEmail(e.target.value)} type="text" placeholder="name@example.com" className="p-3 border border-border w-full rounded-md" />
                             </div>
                         </div>
                         <div className="flex sm:block justify-between">
@@ -109,7 +109,7 @@ const Register = () => {
                                 <div className="my-2">
                                     <label className="font-bold">Project Duration *</label>
                                 </div>
-                                <select onChange={e => setDuration(e.target.value)} className="p-4 rounded-md bg-transparent border border-border w-full">
+                                <select value={Duration}  onChange={e => setDuration(e.target.value)} className="p-4 rounded-md bg-transparent border border-border w-full">
                                     <option value="More than 1 Year">More than 1 Year</option>
                                     <option value="6 Months to 1 Year">6 Months to 1 Year</option>
                                     <option value="3 to 6 Months"> 3 to 6 Months</option>
@@ -124,13 +124,13 @@ const Register = () => {
                             <div className="my-2">
                                 <label className="font-bold">Website / Company</label>
                             </div>
-                            <input onChange={e => setWebsite(e.target.value)} type="text" placeholder="www.yourwebsite.com" className="p-3 border border-border w-full rounded-md" />
+                            <input value={Website}  onChange={e => setWebsite(e.target.value)} type="text" placeholder="www.yourwebsite.com" className="p-3 border border-border w-full rounded-md" />
                         </div>
                         <div className="my-4">
                             <div className="my-2">
                                 <label className="font-bold">Work Requirement *</label>
                             </div>
-                            <textarea onChange={e => setDesc(e.target.value)} name="" placeholder="Type your answer here" className="p-3 border border-border w-full rounded-md"></textarea>
+                            <textarea value={Desc}  onChange={e => setDesc(e.target.value)} name="" placeholder="Type your answer here" className="p-3 border border-border w-full rounded-md"></textarea>
                         </div>
                         <div className="mt-8">
                             <input type="button" onClick={submit} value="start 1-week free trial" className="p-4 font-bold capitalize btn bg-blue text-white w-full rounded-md" />
